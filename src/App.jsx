@@ -8,12 +8,12 @@ export default function App() {
   const [todos, setTodos] = useState(() => {
     const localValue = localStorage.getItem("ITEMS")
     if (localValue == null) return []
-    
+
     return JSON.parse(localValue)
   })
 
   useEffect(() => {
-    localStorage.setItem("ITEM", JSON.stringify(todos))
+    localStorage.setItem("ITEMS", JSON.stringify(todos))
   }, [todos])
   // any time items in [todos] change, calls function and takes todos and stores in local storage.
 
